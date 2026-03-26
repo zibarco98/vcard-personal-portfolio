@@ -12,7 +12,8 @@ const sidebar = document.querySelector("[data-sidebar]");
 const sidebarBtn = document.querySelector("[data-sidebar-btn]");
 
 // sidebar toggle functionality for mobile
-sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
+if (sidebarBtn) {
+sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });}
 
 
 
@@ -50,18 +51,20 @@ for (let i = 0; i < testimonialsItem.length; i++) {
 }
 
 // add click event to modal close button
-modalCloseBtn.addEventListener("click", testimonialsModalFunc);
-overlay.addEventListener("click", testimonialsModalFunc);
+if (modalCloseBtn) {
+modalCloseBtn.addEventListener("click", testimonialsModalFunc);}
+if (overlay) {
+overlay.addEventListener("click", testimonialsModalFunc);}
 
 
 
 // custom select variables
 const select = document.querySelector("[data-select]");
 const selectItems = document.querySelectorAll("[data-select-item]");
-const selectValue = document.querySelector("[data-selecct-value]");
+const selectValue = document.querySelector("[data-select-value]");
 const filterBtn = document.querySelectorAll("[data-filter-btn]");
-
-select.addEventListener("click", function () { elementToggleFunc(this); });
+if (select) {
+select.addEventListener("click", function () { elementToggleFunc(this); });}
 
 // add event in all select items
 for (let i = 0; i < selectItems.length; i++) {
@@ -121,6 +124,8 @@ const formInputs = document.querySelectorAll("[data-form-input]");
 const formBtn = document.querySelector("[data-form-btn]");
 
 // add event to all form input field
+
+if (formInputs.length > 0) {
 for (let i = 0; i < formInputs.length; i++) {
   formInputs[i].addEventListener("input", function () {
 
@@ -132,6 +137,7 @@ for (let i = 0; i < formInputs.length; i++) {
     }
 
   });
+}
 }
 
 
